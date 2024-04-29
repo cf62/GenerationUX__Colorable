@@ -1,0 +1,30 @@
+{
+  "name": "colorable-app",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "deploy": "gh-pages -d public",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "@rebass/forms": "^4.0.6",
+    "chroma-js": "^2.1.0",
+    "d3-format": "^1.4.4",
+    "gatsby": "^2.23.9",
+    "gatsby-plugin-create-client-paths": "^2.3.5",
+    "gatsby-plugin-react-helmet": "^3.3.5",
+    "gh-pages": "^6.0.0",
+    "hello-color": "^1.0.2",
+    "history": "^4.10.1",
+    "lodash": "^4.17.15",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-helmet": "^6.1.0",
+    "rebass": "^4.0.7",
+    "reflexbox": "^4.0.6"
+  }
+}
