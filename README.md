@@ -3,15 +3,17 @@
 
 Forked from [Colorable](https://github.com/jxnblk/colorable)
 
-Take a set color palette and get contrast values for every possible combination – useful for finding safe color combinations with predefined colors and includes pass/fail scores for the WCAG accessibility guidelines.
+## Getting Started
 
-Getting Started
-
+```bash
 npm i --save colorable
-Usage
+```
 
-Pass an array of color strings or an object with color strings as values.
+## Usage
 
+Pass an array of color strings or an object with color strings as values. 
+
+```js
 var colorable = require('colorable')
 
 var colors = {
@@ -21,8 +23,13 @@ var colors = {
 }
 
 var result = colorable(colors, { compact: true, threshold: 0 })
-Returns an array of colors with combinations for all other colors and their WCAG contrast values.
+```
 
+Returns an array of colors with combinations for all other colors and their
+[WCAG contrast](http://www.w3.org/TR/WCAG20/#visual-audio-contrast)
+values.
+
+```json
 [
   {
     "hex": "#FF0000",
@@ -54,36 +61,41 @@ Returns an array of colors with combinations for all other colors and their WCAG
   },
   ...
 ]
-Accessibility object
+```
+
+### Accessibility object
 
 Each key is a boolean value indicating if the color contrast meets the following criteria:
+- `aa` - greater than 4.5 (for normal sized text)
+- `aaLarge` - greater than 3 ([for bold text or text larger than 24px](http://www.w3.org/TR/WCAG20/#larger-scaledef))
+- `aaa` - greater than 7 
+- `aaaLarge` - greater than 4.5 
 
-aa - greater than 4.5 (for normal sized text)
-aaLarge - greater than 3 (for bold text or text larger than 24px)
-aaa - greater than 7
-aaaLarge - greater than 4.5
-Options
+---
 
-compact
+## Options
 
-Type: Boolean (default: false)
+### `compact`
 
-If set to true, the result will be a smaller object that only includes hex value color strings, a name for each color (if an object is passed to the function), contrast, and accessibility values. When set to false, the result also includes the entire harthur/color object for each color, which includes other properties and methods for color manipulation.
+_Type: Boolean (default: `false`)_
 
-threshold
+If set to `true`, the result will be a smaller object that only includes hex value color strings, a name for each color (if an object is passed to the function), contrast, and accessibility values.
+When set to `false`, the result also includes the entire [harthur/color](https://www.npmjs.com/package/color) object for each color, which includes other properties and methods for color manipulation.
 
-Type: Number (default: 0)
+### `threshold`
+
+_Type: Number (default: `0`)_
 
 When set, the colorable function only returns combinations that have a contrast above this value. This is useful for only seeing combinations that pass a minimum contrast level.
 
-uniq
+### `uniq`
 
-Type: Boolean (default: true)
+_Type: Boolean (default: true)_
 
-When set to true, the array of colors is passed through lodash.uniq to remove duplicates.
+When set to `true`, the array of colors is passed through lodash.uniq to remove duplicates.
 
 
+---
 
 MIT License
 
-# colorable-app
