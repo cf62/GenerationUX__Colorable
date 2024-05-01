@@ -1,5 +1,5 @@
 
-# GenerationUX✨ Colorable App
+# GenerationUX✨ Colorable
 
 Forked from [Colorable](https://github.com/jxnblk/colorable)
 
